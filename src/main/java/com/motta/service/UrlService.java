@@ -44,9 +44,9 @@ public class UrlService {
     private String shortenUrl() {
         StringBuilder shortUrl = new StringBuilder();
 
-        int LENGTH_SHORT_URL = 6;
+        int lengthShortUrl = 6;
 
-        for (int i = 0; i < LENGTH_SHORT_URL; i++){
+        for (int i = 0; i < lengthShortUrl; i++){
             int index = random.nextInt(ALLOWED_CHARS.length());
             shortUrl.append(ALLOWED_CHARS.charAt(index));
         }
