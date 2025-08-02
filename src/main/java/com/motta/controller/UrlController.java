@@ -1,5 +1,6 @@
 package com.motta.controller;
 
+import com.motta.docs.UrlControllerSwagger;
 import com.motta.dto.UrlShortedResponse;
 import com.motta.dto.UrlShortenRequest;
 import com.motta.service.UrlService;
@@ -12,7 +13,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @RestController
-public class UrlController {
+public class UrlController implements UrlControllerSwagger {
 
     private final UrlService urlService;
 
