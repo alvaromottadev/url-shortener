@@ -19,7 +19,7 @@ public class UrlController {
 
     @PostMapping
     public ResponseEntity<UrlShortedResponse> shortenUrl(@RequestBody UrlShortenRequest urlShortenRequest)  {
-        UrlShortedResponse response = urlService.shortenUrl(urlShortenRequest.originalUrl());
+        UrlShortedResponse response = urlService.findOrCreateShortUrl(urlShortenRequest.originalUrl());
         return ResponseEntity.status(201).body(response);
     }
 
