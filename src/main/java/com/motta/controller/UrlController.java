@@ -3,10 +3,13 @@ package com.motta.controller;
 import com.motta.dto.UrlShortedResponse;
 import com.motta.dto.UrlShortenRequest;
 import com.motta.service.UrlService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @RestController
 public class UrlController {
@@ -21,6 +24,14 @@ public class UrlController {
     public ResponseEntity<UrlShortedResponse> shortenUrl(@RequestBody UrlShortenRequest urlShortenRequest)  {
         UrlShortedResponse response = urlService.findOrCreateShortUrl(urlShortenRequest.originalUrl());
         return ResponseEntity.status(201).body(response);
+    }
+
+    @GetMapping("/{shortUrl}")
+    public ResponseEntity<Void> redirectToOriginalUrlFromShortUrl(@PathVariable String shortUrl) throws URISyntaxException {
+        String originalUrl = this.urlService.findByShortUrl(shortUrl);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(new URI(originalUrl));
+        return new ResponseEntity<>(headers,HttpStatus.MOVED_PERMANENTLY);
     }
 
 }

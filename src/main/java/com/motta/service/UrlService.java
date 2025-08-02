@@ -2,13 +2,12 @@ package com.motta.service;
 
 import com.motta.UrlRepository;
 import com.motta.dto.UrlShortedResponse;
+import com.motta.exception.OriginalUrlNotFoundException;
 import com.motta.model.Url;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-@Slf4j
 @Service
 public class UrlService {
 
@@ -35,6 +34,11 @@ public class UrlService {
 
     private Url findByOriginalUrl(String originalUrl){
         return urlRepository.findByOriginalUrl(originalUrl);
+    }
+
+    public String findByShortUrl(String shortUrl){
+       Url url = urlRepository.findByShortUrl(shortUrl).orElseThrow(() -> new OriginalUrlNotFoundException("Shorturl not found."));
+       return url.getOriginalUrl();
     }
 
     private String shortenUrl() {
