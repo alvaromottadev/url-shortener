@@ -1,4 +1,4 @@
-package com.motta;
+package com.motta.repository;
 
 import com.motta.model.Url;
 import org.springframework.data.jpa.repository.JpaRepository;

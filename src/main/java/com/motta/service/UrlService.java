@@ -1,6 +1,6 @@
 package com.motta.service;
 
-import com.motta.UrlRepository;
+import com.motta.repository.UrlRepository;
 import com.motta.dto.UrlShortedResponse;
 import com.motta.exception.OriginalUrlNotFoundException;
 import com.motta.model.Url;
