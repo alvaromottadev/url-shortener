@@ -32,7 +32,7 @@ public class UrlService {
         return new UrlShortedResponse(shortUrl);
     }
 
-    private Url findByOriginalUrl(String originalUrl){
+    public Url findByOriginalUrl(String originalUrl){
         return urlRepository.findByOriginalUrl(originalUrl);
     }
 
@@ -41,7 +41,7 @@ public class UrlService {
        return url.getOriginalUrl();
     }
 
-    private String shortenUrl() {
+    public String shortenUrl() {
         StringBuilder shortUrl = new StringBuilder();
 
         int lengthShortUrl = 6;
