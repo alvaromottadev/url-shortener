@@ -7,6 +7,7 @@ import com.motta.service.UrlService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -22,7 +23,7 @@ public class UrlController implements UrlControllerSwagger {
     }
 
     @PostMapping
-    public ResponseEntity<UrlShortedResponse> shortenUrl(@RequestBody UrlShortenRequest urlShortenRequest)  {
+    public ResponseEntity<UrlShortedResponse> shortenUrl(@Validated @RequestBody UrlShortenRequest urlShortenRequest)  {
         UrlShortedResponse response = urlService.findOrCreateShortUrl(urlShortenRequest.originalUrl());
         return ResponseEntity.status(201).body(response);
     }
