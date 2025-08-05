@@ -1,15 +1,15 @@
-# Encurtador de URL
+# 🔗 Encurtador de URL
 
 Este projeto é um **encurtador de URL** desenvolvido para facilitar a criação de links curtos e gerenciáveis a partir de URLs longas. Com uma API robusta e intuitiva, ele permite que usuários criem, consultem e gerenciem URLs encurtadas de forma simples e eficiente.
 
-## Funcionalidades
+## 🧩 Funcionalidades
 
 - **Criação de URLs encurtadas:** Gere links curtos para URLs longas facilmente.
 - **Redirecionamento:** Acesse rapidamente a URL original a partir do link curto.
 - **Documentação interativa:** API documentada e navegável usando Swagger.
 - **Testes unitários:** Cobertura de testes para garantir a confiabilidade do sistema.
 
-## Documentação
+## 📚 Documentação
 
 A documentação da API está disponível via **Swagger**. Após iniciar o serviço, acesse:
 
@@ -17,18 +17,18 @@ A documentação da API está disponível via **Swagger**. Após iniciar o servi
 http://localhost:8080/swagger-ui/index.html
 ```
 
-## Variáveis de Ambiente
+## 🍃 Variáveis de Ambiente
 
 A aplicação utiliza as seguintes variáveis de ambiente para configuração:
 
-| Variável            | Significado                                | Exemplo                |
-|---------------------|--------------------------------------------|------------------------|
-| `DBHOST`            | Endereço do banco de dados                 | `localhost`            |
-| `DBPORT`            | Porta do banco de dados                    | `5433`                 |
-| `DATABASE_USERNAME` | Usuário do banco de dados                  | `postgres`             |
-| `DATABASE_PASSWORD` | Senha do banco de dados                    | `postgres`             |
+| Variável     | Significado                                | Exemplo                |
+|--------------|--------------------------------------------|------------------------|
+| `DBHOST`     | Endereço do banco de dados                 | `localhost`            |
+| `DBPORT`     | Porta do banco de dados                    | `5433`                 |
+| `DBUSER`     | Usuário do banco de dados                  | `postgres`             |
+| `DBPASSWORD` | Senha do banco de dados                    | `postgres`             |
 
-## Como iniciar o projeto
+## 🔨 Como iniciar o projeto
 
 1. **Ajuste as variáveis no `application.properties`.**
 2. **Execute o docker-compose:**
@@ -54,7 +54,7 @@ http://localhost:8080/1292x3
 
 A url `http://localhost:8080` pode ser alterada em UrlShortedResponse.
 
-## Tecnologias Utilizadas
+## 📌 Tecnologias Utilizadas
 
 - **Java**
 - **Spring Boot** (framework principal)
