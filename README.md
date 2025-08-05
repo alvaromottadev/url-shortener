@@ -39,7 +39,7 @@ A aplicação utiliza as seguintes variáveis de ambiente para configuração:
    Isso irá subir o banco de dados.
 
 
-3. **Execute a aplicação:**  
+3. **Execute a aplicação**  
 
 4. **Acesse a documentação:**
     - [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
